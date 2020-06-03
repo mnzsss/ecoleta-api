@@ -22,3 +22,10 @@
 
 - point_id
 - item_id
+
+## Functions
+
+- [ ] Create Collect Point
+- [ ] List Collect Items
+- [ ] List Collect Points with state/city/items
+- [ ] List Collect Point
