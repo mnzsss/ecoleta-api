@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { celebrate, Joi } from 'celebrate';
 import multer from 'multer';
+import { celebrate, Joi } from 'celebrate';
 
 import uploadConfig from './config/upload';
 
@@ -14,6 +14,7 @@ routes.get('/items', ItemsController.index);
 
 routes.post(
   '/points',
+  upload.single('image'),
   celebrate({
     body: Joi.object().keys({
       name: Joi.string().required(),
@@ -26,7 +27,6 @@ routes.post(
       items: Joi.string().required(),
     }),
   }),
-  upload.single('image'),
   PointsController.create,
 );
 routes.get('/points/:id', PointsController.show);
